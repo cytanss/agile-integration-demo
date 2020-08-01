@@ -1,0 +1,9 @@
+apiVersion: enmasse.io/v1beta1
+kind: AddressSpace
+metadata:
+  name: myspace
+spec:
+  authenticationService:
+    name: none-authservice
+  plan: standard-small
+  type: standard

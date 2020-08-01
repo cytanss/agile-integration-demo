@@ -1,0 +1,17 @@
+apiVersion: user.enmasse.io/v1beta1
+kind: MessagingUser
+metadata:
+  name: myspace.demouser
+  namespace: amq-online
+spec:
+  authentication:
+    password: demo123
+    type: password
+  authorization:
+    - addresses:
+        - '*'
+      operations:
+        - send
+        - recv
+  username: demouser
+
