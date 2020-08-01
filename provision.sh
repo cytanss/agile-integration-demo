@@ -140,27 +140,25 @@ GITHUB_REF=${GITHUB_REF:-ocp-4.4.8}
 function deploy() {
 
   #START : Use for scripts testing purposes
-  oc delete project fuse-online amq-online 3scale-project demo-project
-  sleep 5
-  oc patch -n amq-online messagingusers.user.enmasse.io/myspace.demouser --type=merge -p '{"metadata": {"finalizers":null}}'
-  oc delete messagingusers.user.enmasse.io myspace.demouser -n amq-online
-  sleep 5
-  oc delete addressspaceschemas.enmasse.io brokered standard -n amq-online
-  sleep 5
-  oc patch -n amq-online addressspaces.enmasse.io/myspace --type=merge -p '{"metadata": {"finalizers":null}}'
-  oc delete addressspaces.enmasse.io myspace -n amq-online
-  sleep 5
+  #oc delete project fuse-online amq-online 3scale-project demo-project
+  #sleep 5
+  #oc patch -n amq-online messagingusers.user.enmasse.io/myspace.demouser --type=merge -p '{"metadata": {"finalizers":null}}'
+  #oc delete messagingusers.user.enmasse.io myspace.demouser -n amq-online
+  #sleep 5
+  #oc delete addressspaceschemas.enmasse.io brokered standard -n amq-online
+  #sleep 5
+  #oc patch -n amq-online addressspaces.enmasse.io/myspace --type=merge -p '{"metadata": {"finalizers":null}}'
+  #oc delete addressspaces.enmasse.io myspace -n amq-online
+  #sleep 5
 
   #read -p "Press Enter to confirm to proceed? " CONFIRMED
   #END : Use for scripts testing purposes
   
-  #read -p "Enter Your OpenShift Wildcard Domain: "  WILDCARD_DOMAIN
-  #read -p "Enter Your Registry Service Account Username: "  RUSERNAME
-  #read -p "Enter Your Registry Service Account Password: "  RPASSWORD
+  read -p "Enter Your OpenShift Wildcard Domain: "  WILDCARD_DOMAIN
+  read -p "Enter Your Registry Service Account Username: "  RUSERNAME
+  read -p "Enter Your Registry Service Account Password: "  RPASSWORD
   
-  WILDCARD_DOMAIN="apps.cluster-klab-f64d.klab-f64d.example.opentlc.com"
-  RUSERNAME="6340056|mylocalocp"
-  RPASSWORD="eyJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIwYjcyNmM3ZTcyNjk0YTllOTBjYTg2MjI1MDUxMzlkNCJ9.FvTuCbCyLpQZz3bKJd29mMNXFVXq3wOUUk6Bs7IDQdqgVw01BD21qqWlHZeOS8Xjpl8sHYq3ehaeyFuKY_6Af7wsPV-gM0UQoTJux0U2jABoZDxPwnZc5QB03ZUzFa8QIkmRlFTt7q-tB0kgL6cgsw1tQDpPHqUn0uMCMahfV3Wu8tdtxDQoLSqqAPEV3j7JYKIdKABFlNDwBfsaftA5o5j1lvxTIcET2vwhFJXaIVgoROXEl1UJ2g62t3fj6h3Dt5v01xZnp88kwpAE3X7xZwBtgQ_fgzYqoiBlNVb015RSa9WpAIkEct_9VJJi73tySmhl1bZNmsZJr-FZiBckvqmu3IbsQ9O8iQ7zfUxyOoSLlegCzyt8E2NSHrnfTqnVlaft7crcxLQFwihwJMQ2m2Gt4DwWvNg_JsavnMct0grsjQ4GysQ9yuKkGojQra7P1E_YrlT-4Xiet_jOxOnZDqNUURO2nUrTXGNmyMgTuE3Urshz_iyxfxRaamOBAOzKyTFIkGyptedlyCBwXwJ_XFzgw0WWCEAcW8yaTvqQ5SjaoNf3gSv6Vip6cTrWr9peByCHGfltP3GizqXc9bOC4zVF8WA8VMhtq_iY0q3C0to4PcVSdmGXoONrZfIZWPclAfhLXTm1ukY-pmLsBK0V1qdLDOT3aQaU5G_u0UZH9AQ"
+  #WILDCARD_DOMAIN="apps.cluster-klab-f64d.klab-f64d.example.opentlc.com"
   
   #echo "Wild Card entered: $WILDCARD_DOMAIN"
   #echo "Username entered: $RUSERNAME"
