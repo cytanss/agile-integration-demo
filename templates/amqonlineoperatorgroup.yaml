@@ -3,11 +3,8 @@ items:
 - apiVersion: operators.coreos.com/v1
   kind: OperatorGroup
   metadata:
-    annotations:
-      olm.providedAPIs: Address.v1beta1.enmasse.io,AddressPlan.v1beta2.admin.enmasse.io,AddressSpace.v1beta1.enmasse.io,AddressSpacePlan.v1beta2.admin.enmasse.io,AddressSpaceSchema.v1beta1.enmasse.io,AuthenticationService.v1beta1.admin.enmasse.io,BrokeredInfraConfig.v1beta1.admin.enmasse.io,ConsoleService.v1beta1.admin.enmasse.io,IoTConfig.v1alpha1.iot.enmasse.io,IoTProject.v1alpha1.iot.enmasse.io,MessagingUser.v1beta1.user.enmasse.io,StandardInfraConfig.v1beta1.admin.enmasse.io
     name: amq-online-og
     namespace: amq-online
-    resourceVersion: "154194"
   spec:
     targetNamespaces:
     - amq-online

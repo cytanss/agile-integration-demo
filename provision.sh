@@ -2,7 +2,7 @@
 
 echo "###############################################################################"
 echo "#  MAKE SURE YOU ARE LOGGED IN:                                               #"
-echo "#  $ oc login http://console.your.openshift.com                               #"
+echo "#  $ oc login http://api.your.openshift.com                                   #"
 echo "###############################################################################"
 
 function usage() {
@@ -153,16 +153,16 @@ function deploy() {
 
   #read -p "Press Enter to confirm to proceed? " CONFIRMED
   #END : Use for scripts testing purposes
-  
+
   read -p "Enter Your OpenShift Wildcard Domain: "  WILDCARD_DOMAIN
   read -p "Enter Your Registry Service Account Username: "  RUSERNAME
   read -p "Enter Your Registry Service Account Password: "  RPASSWORD
   
-  #WILDCARD_DOMAIN="apps.cluster-klab-f64d.klab-f64d.example.opentlc.com"
+  #WILDCARD_DOMAIN="apps.cluster-86af.86af.sandbox254.opentlc.com"
   
-  #echo "Wild Card entered: $WILDCARD_DOMAIN"
-  #echo "Username entered: $RUSERNAME"
-  #echo "Password entered: $RPASSWORD"
+  echo "Wild Card entered: $WILDCARD_DOMAIN"
+  echo "Username entered: $RUSERNAME"
+  echo "Password entered: $RPASSWORD"
   read -p "Press Enter Y to confirm to proceed? " CONFIRMED
   
   if [ -z "$CONFIRMED" ];
@@ -196,21 +196,21 @@ function deploy() {
   oc apply -f ./templates/amqonlinesub.yaml -n amq-online
 
   THREESCALE_ADMIN_PASSWORD=$DEMO_PASSWORD
-  #echo ${THREESCALE_ADMIN_PASSWORD}
+#  echo ${THREESCALE_ADMIN_PASSWORD}
 
-  oc new-app --file ./templates/280_amp.yaml --param WILDCARD_DOMAIN=${WILDCARD_DOMAIN} --param ADMIN_PASSWORD=${THREESCALE_ADMIN_PASSWORD} -n 3scale-project
+  oc new-app --file ./templates/290_amp.yaml --param WILDCARD_DOMAIN=${WILDCARD_DOMAIN} --param ADMIN_PASSWORD=${THREESCALE_ADMIN_PASSWORD} -n 3scale-project
 
   sleep 2
 
-  oc apply -f ./templates/fuse76operatorgroup.yaml -n fuse-online
-  oc apply -f ./templates/fuse76sub.yaml -n fuse-online
+  oc apply -f ./templates/fuseoperatorgroup.yaml -n fuse-online
+  oc apply -f ./templates/fusesub.yaml -n fuse-online
 
   echo_header "Entering 10 sec sleep to wait for Fuse Online core services provisioning"
   sleep 10
 
   oc secrets link syndesis-operator syndesis-pull-secret --for=pull -n fuse-online
   sleep 1
-  oc apply -f ./templates/fuse76syndesis.yaml -n fuse-online
+  oc apply -f ./templates/fusesyndesis.yaml -n fuse-online
 
   echo_header "Entering 30 sec sleep to wait for Fuse Online provisioning"
   sleep 30
@@ -223,8 +223,7 @@ function deploy() {
   oc rsync ./templates/dbscripts ${dbpodname}:/tmp -n demo-project
 
   sleep 3
-  
-  oc exec ${dbpodname} -- bash -c "psql -U "$DEMO_USERNAME" -d sampledb -a -f /tmp/dbscripts/psql_data.sql" -n demo-project
+  oc exec ${dbpodname} -- bash -c "psql -U "${DEMO_USERNAME}" -d sampledb -a -f /tmp/dbscripts/psql_data.sql" -n demo-project
 
   #oc new-app --docker-image=quay.io/integreatly/fruit-crud-app:1.0.1 -n demo-project
   oc new-app --docker-image=quay.io/cytan/fruit-crud-app:latest --as-deployment-config=true -n demo-project
