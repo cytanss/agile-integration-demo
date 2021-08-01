@@ -1,0 +1,12 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIManager
+metadata:
+  name: example-apimanager
+  namespace: 3scale-project
+spec:
+  wildcardDomain: 'WILDCARD_DOMAIN'
+  resourceRequirementsEnabled: false
+  system:
+    fileStorage:
+      persistentVolumeClaim:
+        storageClassName: ocs-storagecluster-cephfs

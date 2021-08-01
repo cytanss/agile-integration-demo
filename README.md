@@ -1,10 +1,13 @@
-# Agile Integration Demo (Updated to support OCP 4.6)
+# Agile Integration Demo (Updated to support OCP 4.8)
 
 This repository includes the provisioning scripts and infrastructure for Agile Integration Demo using AMQ Online, Fuse Oneline and 3scale
 
 * [Introduction](#introduction)
 * [Deploy on RHPDS](#deploy-on-rhpds)
 * [Demo Guide](#demo-guide)
+
+## Prerequisites
+* OpenShift Container Storage installed
 
 ## Introduction
 
@@ -14,7 +17,7 @@ There are 4 modules in this demo:
 
 ## Deploy on RHPDS
 
-Provision your OpenShift environment via the service catalog under **Workshops &rarr; OpenShift 4.6 Workshop**.
+Provision your OpenShift environment via the service catalog under **Workshops &rarr; OpenShift 4.8 Workshop**.
 
 ## Automated Deploy on OpenShift
 You can use the `provision.sh` script provided to deploy the entire demo:

@@ -184,21 +184,25 @@ function deploy() {
   oc  new-project 3scale-project --display-name="3scale Project"
   oc  new-project demo-project --display-name="Demo Project"
 
+# Provisioning 3scale using Operator
+  echo_header "Start provisioning 3scale AMP"
+  oc create secret docker-registry threescale-registry-auth --docker-server=registry.redhat.io --docker-username=${RUSERNAME} --docker-password=${RPASSWORD} -n 3scale-project
+  oc create -f templates/3scaleoperatorgroup.yaml -n 3scale-project
+  oc create -f templates/3scalesub.yaml -n 3scale-project
+  oc create secret generic system-seed --from-literal=ADMIN_PASSWORD=$DEMO_PASSWORD -n 3scale-project
+  sleep 8
+  sed -i'.original' -e 's/WILDCARD_DOMAIN/'"$WILDCARD_DOMAIN"'/g' templates/3scale-apimanager.yaml
+  oc create -f templates/3scale-apimanager.yaml -n 3scale-project
+
+  sleep 1
   oc new-app --template=postgresql-persistent --param=POSTGRESQL_USER=$DEMO_USERNAME --param=POSTGRESQL_PASSWORD=$DEMO_PASSWORD -n demo-project
 
-  oc create secret docker-registry threescale-registry-auth --docker-server=registry.redhat.io --docker-username=${RUSERNAME} --docker-password=${RPASSWORD} -n 3scale-project
-  oc secrets link default threescale-registry-auth --for=pull -n 3scale-project
   oc create secret docker-registry syndesis-pull-secret --docker-server=registry.redhat.io --docker-username=${RUSERNAME} --docker-password=${RPASSWORD} -n fuse-online
 
   sleep 2
 
   oc apply -f ./templates/amqonlineoperatorgroup.yaml -n amq-online
   oc apply -f ./templates/amqonlinesub.yaml -n amq-online
-
-  THREESCALE_ADMIN_PASSWORD=$DEMO_PASSWORD
-#  echo ${THREESCALE_ADMIN_PASSWORD}
-
-  oc new-app --file ./templates/290_amp.yaml --param WILDCARD_DOMAIN=${WILDCARD_DOMAIN} --param ADMIN_PASSWORD=${THREESCALE_ADMIN_PASSWORD} -n 3scale-project
 
   sleep 2
 
@@ -378,9 +382,6 @@ case "$ARG_COMMAND" in
         usage
         ;;
 esac
-
-#set_default_project
-#popd >/dev/null
 
 END=`date +%s`
 echo "(Completed in $(( ($END - $START)/60 )) min $(( ($END - $START)%60 )) sec)"
