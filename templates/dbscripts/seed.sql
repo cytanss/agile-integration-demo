@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.12
--- Dumped by pg_dump version 10.12
+-- Dumped from database version 10.15
+-- Dumped by pg_dump version 10.15
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,14 +17,14 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
 --
 
 CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
 --
 
 COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
@@ -35,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: beneficiary; Type: TABLE; Schema: public; Owner: admin
+-- Name: beneficiary; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.beneficiary (
@@ -50,10 +50,8 @@ CREATE TABLE public.beneficiary (
 );
 
 
-ALTER TABLE public.beneficiary OWNER TO admin;
-
 --
--- Name: beneficiary_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: beneficiary_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.beneficiary_seq
@@ -64,10 +62,8 @@ CREATE SEQUENCE public.beneficiary_seq
     CACHE 1;
 
 
-ALTER TABLE public.beneficiary_seq OWNER TO admin;
-
 --
--- Name: blacklisted; Type: TABLE; Schema: public; Owner: admin
+-- Name: blacklisted; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.blacklisted (
@@ -78,10 +74,8 @@ CREATE TABLE public.blacklisted (
 );
 
 
-ALTER TABLE public.blacklisted OWNER TO admin;
-
 --
--- Name: blacklisted_id_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: blacklisted_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.blacklisted_id_seq
@@ -93,17 +87,15 @@ CREATE SEQUENCE public.blacklisted_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.blacklisted_id_seq OWNER TO admin;
-
 --
--- Name: blacklisted_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: admin
+-- Name: blacklisted_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
 ALTER SEQUENCE public.blacklisted_id_seq OWNED BY public.blacklisted.id;
 
 
 --
--- Name: commratedet; Type: TABLE; Schema: public; Owner: admin
+-- Name: commratedet; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.commratedet (
@@ -121,10 +113,8 @@ CREATE TABLE public.commratedet (
 );
 
 
-ALTER TABLE public.commratedet OWNER TO admin;
-
 --
--- Name: commratedet_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: commratedet_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.commratedet_seq
@@ -135,10 +125,8 @@ CREATE SEQUENCE public.commratedet_seq
     CACHE 1;
 
 
-ALTER TABLE public.commratedet_seq OWNER TO admin;
-
 --
--- Name: commratehdr; Type: TABLE; Schema: public; Owner: admin
+-- Name: commratehdr; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.commratehdr (
@@ -150,10 +138,8 @@ CREATE TABLE public.commratehdr (
 );
 
 
-ALTER TABLE public.commratehdr OWNER TO admin;
-
 --
--- Name: commratehdr_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: commratehdr_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.commratehdr_seq
@@ -164,10 +150,8 @@ CREATE SEQUENCE public.commratehdr_seq
     CACHE 1;
 
 
-ALTER TABLE public.commratehdr_seq OWNER TO admin;
-
 --
--- Name: coverage; Type: TABLE; Schema: public; Owner: admin
+-- Name: coverage; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.coverage (
@@ -183,10 +167,8 @@ CREATE TABLE public.coverage (
 );
 
 
-ALTER TABLE public.coverage OWNER TO admin;
-
 --
--- Name: coverage_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: coverage_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.coverage_seq
@@ -197,10 +179,8 @@ CREATE SEQUENCE public.coverage_seq
     CACHE 1;
 
 
-ALTER TABLE public.coverage_seq OWNER TO admin;
-
 --
--- Name: document; Type: TABLE; Schema: public; Owner: admin
+-- Name: document; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.document (
@@ -212,10 +192,8 @@ CREATE TABLE public.document (
 );
 
 
-ALTER TABLE public.document OWNER TO admin;
-
 --
--- Name: document_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: document_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.document_seq
@@ -226,10 +204,8 @@ CREATE SEQUENCE public.document_seq
     CACHE 1;
 
 
-ALTER TABLE public.document_seq OWNER TO admin;
-
 --
--- Name: insured; Type: TABLE; Schema: public; Owner: admin
+-- Name: insured; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.insured (
@@ -252,10 +228,8 @@ CREATE TABLE public.insured (
 );
 
 
-ALTER TABLE public.insured OWNER TO admin;
-
 --
--- Name: insured_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: insured_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.insured_seq
@@ -266,10 +240,8 @@ CREATE SEQUENCE public.insured_seq
     CACHE 1;
 
 
-ALTER TABLE public.insured_seq OWNER TO admin;
-
 --
--- Name: planmaster; Type: TABLE; Schema: public; Owner: admin
+-- Name: planmaster; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.planmaster (
@@ -296,10 +268,8 @@ CREATE TABLE public.planmaster (
 );
 
 
-ALTER TABLE public.planmaster OWNER TO admin;
-
 --
--- Name: planmaster_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: planmaster_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.planmaster_seq
@@ -310,10 +280,8 @@ CREATE SEQUENCE public.planmaster_seq
     CACHE 1;
 
 
-ALTER TABLE public.planmaster_seq OWNER TO admin;
-
 --
--- Name: policyholder; Type: TABLE; Schema: public; Owner: admin
+-- Name: policyholder; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.policyholder (
@@ -335,10 +303,8 @@ CREATE TABLE public.policyholder (
 );
 
 
-ALTER TABLE public.policyholder OWNER TO admin;
-
 --
--- Name: premratedet; Type: TABLE; Schema: public; Owner: admin
+-- Name: premratedet; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.premratedet (
@@ -359,10 +325,8 @@ CREATE TABLE public.premratedet (
 );
 
 
-ALTER TABLE public.premratedet OWNER TO admin;
-
 --
--- Name: premratedet_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: premratedet_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.premratedet_seq
@@ -373,10 +337,8 @@ CREATE SEQUENCE public.premratedet_seq
     CACHE 1;
 
 
-ALTER TABLE public.premratedet_seq OWNER TO admin;
-
 --
--- Name: premratehdr; Type: TABLE; Schema: public; Owner: admin
+-- Name: premratehdr; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.premratehdr (
@@ -389,10 +351,8 @@ CREATE TABLE public.premratehdr (
 );
 
 
-ALTER TABLE public.premratehdr OWNER TO admin;
-
 --
--- Name: premratehdr_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: premratehdr_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.premratehdr_seq
@@ -403,10 +363,8 @@ CREATE SEQUENCE public.premratehdr_seq
     CACHE 1;
 
 
-ALTER TABLE public.premratehdr_seq OWNER TO admin;
-
 --
--- Name: proposal; Type: TABLE; Schema: public; Owner: admin
+-- Name: proposal; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.proposal (
@@ -434,10 +392,8 @@ CREATE TABLE public.proposal (
 );
 
 
-ALTER TABLE public.proposal OWNER TO admin;
-
 --
--- Name: proposal_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: proposal_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.proposal_seq
@@ -448,10 +404,8 @@ CREATE SEQUENCE public.proposal_seq
     CACHE 1;
 
 
-ALTER TABLE public.proposal_seq OWNER TO admin;
-
 --
--- Name: tsar; Type: TABLE; Schema: public; Owner: admin
+-- Name: tsar; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.tsar (
@@ -464,10 +418,8 @@ CREATE TABLE public.tsar (
 );
 
 
-ALTER TABLE public.tsar OWNER TO admin;
-
 --
--- Name: tsar_dup; Type: TABLE; Schema: public; Owner: admin
+-- Name: tsar_dup; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.tsar_dup (
@@ -480,10 +432,8 @@ CREATE TABLE public.tsar_dup (
 );
 
 
-ALTER TABLE public.tsar_dup OWNER TO admin;
-
 --
--- Name: tsar_seq; Type: SEQUENCE; Schema: public; Owner: admin
+-- Name: tsar_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
 CREATE SEQUENCE public.tsar_seq
@@ -494,17 +444,15 @@ CREATE SEQUENCE public.tsar_seq
     CACHE 1;
 
 
-ALTER TABLE public.tsar_seq OWNER TO admin;
-
 --
--- Name: blacklisted id; Type: DEFAULT; Schema: public; Owner: admin
+-- Name: blacklisted id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.blacklisted ALTER COLUMN id SET DEFAULT nextval('public.blacklisted_id_seq'::regclass);
 
 
 --
--- Data for Name: beneficiary; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: beneficiary; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.beneficiary (seqid, lastmodby, lastmoddate, fullname, nric, percentage, relationship, lfkproposal) FROM stdin;
@@ -522,7 +470,7 @@ COPY public.beneficiary (seqid, lastmodby, lastmoddate, fullname, nric, percenta
 
 
 --
--- Data for Name: blacklisted; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: blacklisted; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.blacklisted (id, nric, aims, liam) FROM stdin;
@@ -531,7 +479,7 @@ COPY public.blacklisted (id, nric, aims, liam) FROM stdin;
 
 
 --
--- Data for Name: commratedet; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: commratedet; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.commratedet (seqid, lastmodby, lastmoddate, applcode, bascommrate, effdatefrom, effdateto, extracommrate, poldurafrom, poldurato, lfkcommratehdr) FROM stdin;
@@ -540,7 +488,7 @@ COPY public.commratedet (seqid, lastmodby, lastmoddate, applcode, bascommrate, e
 
 
 --
--- Data for Name: commratehdr; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: commratehdr; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.commratehdr (seqid, lastmodby, lastmoddate, ratedesc, ratename) FROM stdin;
@@ -550,7 +498,7 @@ COPY public.commratehdr (seqid, lastmodby, lastmoddate, ratedesc, ratename) FROM
 
 
 --
--- Data for Name: coverage; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: coverage; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.coverage (seqid, lastmodby, lastmoddate, annzprem, coverunit, plancode, plantype, term, lfkproposal) FROM stdin;
@@ -558,7 +506,7 @@ COPY public.coverage (seqid, lastmodby, lastmoddate, annzprem, coverunit, planco
 
 
 --
--- Data for Name: document; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: document; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.document (seqid, lastmodby, lastmoddate, filename, lfkproposal) FROM stdin;
@@ -568,7 +516,7 @@ COPY public.document (seqid, lastmodby, lastmoddate, filename, lfkproposal) FROM
 
 
 --
--- Data for Name: insured; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: insured; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.insured (seqid, lastmodby, lastmoddate, age, dob, email, firstname, gender, height, lastname, snationality, nric, otherid, race, weight, lfkproposal) FROM stdin;
@@ -586,7 +534,7 @@ COPY public.insured (seqid, lastmodby, lastmoddate, age, dob, email, firstname, 
 
 
 --
--- Data for Name: planmaster; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: planmaster; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.planmaster (lseqid, lastmodby, lastmoddate, alwpremmethod, alwpremmode, approvedate, benefittype, scurrency, launchdatefr, launchdateto, plancode, planname, plantype, prodcat, singleprem, status, lfkcommratehdr, lfkpremratehdr, minsa, maxsa) FROM stdin;
@@ -603,7 +551,7 @@ COPY public.planmaster (lseqid, lastmodby, lastmoddate, alwpremmethod, alwpremmo
 
 
 --
--- Data for Name: policyholder; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: policyholder; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.policyholder (lastmodby, lastmoddate, age, dob, email, firstname, gender, height, lastname, snationality, nric, otherid, race, weight, proposal_seqid) FROM stdin;
@@ -628,7 +576,7 @@ SYSTEM	2020-01-03 03:19:51.058	30	1990-01-03 00:00:00	hamidi@gmail.com	Hamidi	F	
 
 
 --
--- Data for Name: premratedet; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: premratedet; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.premratedet (seqid, lastmodby, lastmoddate, amount, effdatefrom, effdatetp, entryagefrom, entryageto, polyearfrom, polyearto, rate, safrom, sato, lfkpremratehdr) FROM stdin;
@@ -642,7 +590,7 @@ COPY public.premratedet (seqid, lastmodby, lastmoddate, amount, effdatefrom, eff
 
 
 --
--- Data for Name: premratehdr; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: premratehdr; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.premratehdr (seqid, lastmodby, lastmoddate, discrate, ratedesc, ratename) FROM stdin;
@@ -652,7 +600,7 @@ COPY public.premratehdr (seqid, lastmodby, lastmoddate, discrate, ratedesc, rate
 
 
 --
--- Data for Name: proposal; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: proposal; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.proposal (seqid, lastmodby, lastmoddate, accepteddate, benefitterm, cigperday, covterm, entrydate, instlprem, maturitydate, plancode, policyno, premmethod, premmode, premterm, process_id, sproposalno, recvdate, status, sumassured, transdate) FROM stdin;
@@ -685,12 +633,12 @@ COPY public.proposal (seqid, lastmodby, lastmoddate, accepteddate, benefitterm, 
 26	SYSTEM	2019-11-29 02:22:56.556	\N	\N	21	33	2019-11-27 00:00:00	12000.00	2019-11-27 00:00:00	SECMED	POL20190009054	CASH	M	33	297	PROP20190007172	2019-11-27 00:00:00	S	300000.00	2019-11-27 00:00:00
 29	SYSTEM	2019-11-29 07:13:42.279	\N	\N	0	55	2019-11-29 00:00:00	2000.00	2079-11-29 00:00:00	SECPRCT	POL20190003924	CASH	A	30	304	PROP20190005307	2019-11-29 00:00:00	AP	100000.00	2019-11-29 00:00:00
 25	SYSTEM	2019-11-28 16:28:14.5	\N	\N	15	42	2019-11-27 00:00:00	\N	2019-11-30 00:00:00	SECMED	POL20190001691	CASH	M	42	255	PROP20190007528	2019-11-27 00:00:00	AP	300000.00	2019-11-27 00:00:00
-27	SYSTEM	2020-01-03 03:23:56.564	\N	\N	0	60	2020-01-03 00:00:00	3900.00	2079-11-29 00:00:00	SECEDU-T	POL20200006196	CASH	A	60	322	PROP20190008454	2020-01-03 00:00:00	S	108000.00	2020-01-03 00:00:00
+27	SYSTEM	2021-06-12 17:47:24.82	\N	\N	30	60	2020-01-03 00:00:00	3900.00	2079-11-29 00:00:00	SECEDU-T	\N	CASH	A	60	5	PROP20190008454	2020-01-03 00:00:00	S	108000.00	2020-01-03 00:00:00
 \.
 
 
 --
--- Data for Name: tsar; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: tsar; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.tsar (seqid, lastmodby, lastmoddate, fullname, nric, tsar) FROM stdin;
@@ -700,7 +648,7 @@ COPY public.tsar (seqid, lastmodby, lastmoddate, fullname, nric, tsar) FROM stdi
 
 
 --
--- Data for Name: tsar_dup; Type: TABLE DATA; Schema: public; Owner: admin
+-- Data for Name: tsar_dup; Type: TABLE DATA; Schema: public; Owner: -
 --
 
 COPY public.tsar_dup (seqid, lastmodby, lastmoddate, fullname, nric, tsar) FROM stdin;
@@ -720,91 +668,91 @@ COPY public.tsar_dup (seqid, lastmodby, lastmoddate, fullname, nric, tsar) FROM 
 
 
 --
--- Name: beneficiary_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: beneficiary_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.beneficiary_seq', 10, true);
 
 
 --
--- Name: blacklisted_id_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: blacklisted_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.blacklisted_id_seq', 1, true);
 
 
 --
--- Name: commratedet_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: commratedet_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.commratedet_seq', 1, false);
 
 
 --
--- Name: commratehdr_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: commratehdr_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.commratehdr_seq', 1, false);
 
 
 --
--- Name: coverage_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: coverage_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.coverage_seq', 1, false);
 
 
 --
--- Name: document_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: document_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.document_seq', 9, true);
 
 
 --
--- Name: insured_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: insured_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.insured_seq', 12, true);
 
 
 --
--- Name: planmaster_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: planmaster_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.planmaster_seq', 10, true);
 
 
 --
--- Name: premratedet_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: premratedet_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.premratedet_seq', 6, true);
 
 
 --
--- Name: premratehdr_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: premratehdr_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.premratehdr_seq', 1, false);
 
 
 --
--- Name: proposal_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: proposal_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.proposal_seq', 30, true);
 
 
 --
--- Name: tsar_seq; Type: SEQUENCE SET; Schema: public; Owner: admin
+-- Name: tsar_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
 SELECT pg_catalog.setval('public.tsar_seq', 1, false);
 
 
 --
--- Name: beneficiary beneficiary_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: beneficiary beneficiary_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.beneficiary
@@ -812,7 +760,7 @@ ALTER TABLE ONLY public.beneficiary
 
 
 --
--- Name: blacklisted blacklisted_nric_key; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: blacklisted blacklisted_nric_key; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.blacklisted
@@ -820,7 +768,7 @@ ALTER TABLE ONLY public.blacklisted
 
 
 --
--- Name: blacklisted blacklisted_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: blacklisted blacklisted_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.blacklisted
@@ -828,7 +776,7 @@ ALTER TABLE ONLY public.blacklisted
 
 
 --
--- Name: commratedet commratedet_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: commratedet commratedet_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.commratedet
@@ -836,7 +784,7 @@ ALTER TABLE ONLY public.commratedet
 
 
 --
--- Name: commratehdr commratehdr_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: commratehdr commratehdr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.commratehdr
@@ -844,7 +792,7 @@ ALTER TABLE ONLY public.commratehdr
 
 
 --
--- Name: coverage coverage_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: coverage coverage_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.coverage
@@ -852,7 +800,7 @@ ALTER TABLE ONLY public.coverage
 
 
 --
--- Name: document document_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: document document_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.document
@@ -860,7 +808,7 @@ ALTER TABLE ONLY public.document
 
 
 --
--- Name: insured insured_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: insured insured_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.insured
@@ -868,7 +816,7 @@ ALTER TABLE ONLY public.insured
 
 
 --
--- Name: planmaster planmaster_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: planmaster planmaster_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.planmaster
@@ -876,7 +824,7 @@ ALTER TABLE ONLY public.planmaster
 
 
 --
--- Name: policyholder policyholder_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: policyholder policyholder_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.policyholder
@@ -884,7 +832,7 @@ ALTER TABLE ONLY public.policyholder
 
 
 --
--- Name: premratedet premratedet_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: premratedet premratedet_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.premratedet
@@ -892,7 +840,7 @@ ALTER TABLE ONLY public.premratedet
 
 
 --
--- Name: premratehdr premratehdr_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: premratehdr premratehdr_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.premratehdr
@@ -900,7 +848,7 @@ ALTER TABLE ONLY public.premratehdr
 
 
 --
--- Name: proposal proposal_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: proposal proposal_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.proposal
@@ -908,7 +856,7 @@ ALTER TABLE ONLY public.proposal
 
 
 --
--- Name: tsar tsar_pkey; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: tsar tsar_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.tsar
@@ -916,7 +864,7 @@ ALTER TABLE ONLY public.tsar
 
 
 --
--- Name: policyholder uk_6attxwp58jqj4g7saa3diyrsx; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: policyholder uk_6attxwp58jqj4g7saa3diyrsx; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.policyholder
@@ -924,7 +872,7 @@ ALTER TABLE ONLY public.policyholder
 
 
 --
--- Name: planmaster uk_gpqpcw6fx7w1nqffc93ungeij; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: planmaster uk_gpqpcw6fx7w1nqffc93ungeij; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.planmaster
@@ -932,7 +880,7 @@ ALTER TABLE ONLY public.planmaster
 
 
 --
--- Name: insured uk_k2mgd5h3s9ibhc6934dfscehg; Type: CONSTRAINT; Schema: public; Owner: admin
+-- Name: insured uk_k2mgd5h3s9ibhc6934dfscehg; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.insured
@@ -940,7 +888,7 @@ ALTER TABLE ONLY public.insured
 
 
 --
--- Name: coverage fk2hym07gjgg52lkm947yky0lv5; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: coverage fk2hym07gjgg52lkm947yky0lv5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.coverage
@@ -948,7 +896,7 @@ ALTER TABLE ONLY public.coverage
 
 
 --
--- Name: planmaster fk5iim4om94jke91oym81g30f0m; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: planmaster fk5iim4om94jke91oym81g30f0m; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.planmaster
@@ -956,7 +904,7 @@ ALTER TABLE ONLY public.planmaster
 
 
 --
--- Name: policyholder fkacwlhsl07n2193g8789vxvqo5; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: policyholder fkacwlhsl07n2193g8789vxvqo5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.policyholder
@@ -964,7 +912,7 @@ ALTER TABLE ONLY public.policyholder
 
 
 --
--- Name: document fki4bjl6i2l4d1n9f6r8riw5kqd; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: document fki4bjl6i2l4d1n9f6r8riw5kqd; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.document
@@ -972,7 +920,7 @@ ALTER TABLE ONLY public.document
 
 
 --
--- Name: beneficiary fkjja733kxw8dssi1cep2w1g0w5; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: beneficiary fkjja733kxw8dssi1cep2w1g0w5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.beneficiary
@@ -980,7 +928,7 @@ ALTER TABLE ONLY public.beneficiary
 
 
 --
--- Name: insured fkm4jjrf42r77gluwhp7tmsh8f1; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: insured fkm4jjrf42r77gluwhp7tmsh8f1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.insured
@@ -988,7 +936,7 @@ ALTER TABLE ONLY public.insured
 
 
 --
--- Name: planmaster fknhcwqi862xd2mny9vxjb058vg; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: planmaster fknhcwqi862xd2mny9vxjb058vg; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.planmaster
@@ -996,7 +944,7 @@ ALTER TABLE ONLY public.planmaster
 
 
 --
--- Name: premratedet fkp9vmqflicd7y38idsr063pm4m; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: premratedet fkp9vmqflicd7y38idsr063pm4m; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.premratedet
@@ -1004,7 +952,7 @@ ALTER TABLE ONLY public.premratedet
 
 
 --
--- Name: commratedet fkt05cq0iheviu8nynpmm4nstii; Type: FK CONSTRAINT; Schema: public; Owner: admin
+-- Name: commratedet fkt05cq0iheviu8nynpmm4nstii; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.commratedet

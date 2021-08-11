@@ -150,7 +150,6 @@ function deploy() {
   #oc patch -n amq-online addressspaces.enmasse.io/myspace --type=merge -p '{"metadata": {"finalizers":null}}'
   #oc delete addressspaces.enmasse.io myspace -n amq-online
   #sleep 5
-
   #read -p "Press Enter to confirm to proceed? " CONFIRMED
   #END : Use for scripts testing purposes
 
@@ -159,7 +158,7 @@ function deploy() {
   read -p "Enter Your Registry Service Account Password: "  RPASSWORD
   
   #WILDCARD_DOMAIN="apps.cluster-86af.86af.sandbox254.opentlc.com"
-  
+
   echo "Wild Card entered: $WILDCARD_DOMAIN"
   echo "Username entered: $RUSERNAME"
   echo "Password entered: $RPASSWORD"
@@ -191,8 +190,9 @@ function deploy() {
   oc create -f templates/3scalesub.yaml -n 3scale-project
   oc create secret generic system-seed --from-literal=ADMIN_PASSWORD=$DEMO_PASSWORD -n 3scale-project
   sleep 8
-  sed -i'.original' -e 's/WILDCARD_DOMAIN/'"$WILDCARD_DOMAIN"'/g' templates/3scale-apimanager.yaml
+  #sed -i'.original' -e 's/WILDCARD_DOMAIN/'"$WILDCARD_DOMAIN"'/g' templates/3scale-apimanager.yaml
   oc create -f templates/3scale-apimanager.yaml -n 3scale-project
+  oc patch APIManager example-apimanager --type='json' -p='[{"op": "replace", "path": "/spec/wildcardDomain", "value": "'$WILDCARD_DOMAIN'" }]' -n 3scale-project
 
   sleep 1
   oc new-app --template=postgresql-persistent --param=POSTGRESQL_USER=$DEMO_USERNAME --param=POSTGRESQL_PASSWORD=$DEMO_PASSWORD -n demo-project
@@ -227,7 +227,7 @@ function deploy() {
   oc rsync ./templates/dbscripts ${dbpodname}:/tmp -n demo-project
 
   sleep 3
-  oc exec ${dbpodname} -- bash -c "psql -U "${DEMO_USERNAME}" -d sampledb -a -f /tmp/dbscripts/psql_data.sql" -n demo-project
+  oc exec $dbpodname -- bash -c "psql -U "$DEMO_USERNAME" -d sampledb -a -f /tmp/dbscripts/seed.sql" -n demo-project
 
   #oc new-app --docker-image=quay.io/integreatly/fruit-crud-app:1.0.1 -n demo-project
   oc new-app --docker-image=quay.io/cytan/fruit-crud-app:latest --as-deployment-config=true -n demo-project

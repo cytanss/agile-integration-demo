@@ -4,7 +4,7 @@ metadata:
   name: example-apimanager
   namespace: 3scale-project
 spec:
-  wildcardDomain: 'WILDCARD_DOMAIN'
+  wildcardDomain: 'tobereplace.com'
   resourceRequirementsEnabled: false
   system:
     fileStorage:
